@@ -43,6 +43,18 @@
             @(NSLayoutAttributeCenterX)  : @"centerX",
             @(NSLayoutAttributeCenterY)  : @"centerY",
             @(NSLayoutAttributeBaseline) : @"baseline",
+            
+#if TARGET_OS_IPHONE
+            @(NSLayoutAttributeLeftMargin)           : @"leftMargin",
+            @(NSLayoutAttributeRightMargin)          : @"rightMargin",
+            @(NSLayoutAttributeTopMargin)            : @"topMargin",
+            @(NSLayoutAttributeBottomMargin)         : @"bottomMargin",
+            @(NSLayoutAttributeLeadingMargin)        : @"leadingMargin",
+            @(NSLayoutAttributeTrailingMargin)       : @"trailingMargin",
+            @(NSLayoutAttributeCenterXWithinMargins) : @"centerXWithinMargins",
+            @(NSLayoutAttributeCenterYWithinMargins) : @"centerYWithinMargins",
+#endif
+            
         };
     
     });
@@ -94,32 +106,32 @@
 
     [description appendFormat:@" %@", [self.class descriptionForObject:self.firstItem]];
     if (self.firstAttribute != NSLayoutAttributeNotAnAttribute) {
-        [description appendFormat:@".%@", [self.class.layoutAttributeDescriptionsByValue objectForKey:@(self.firstAttribute)]];
+        [description appendFormat:@".%@", self.class.layoutAttributeDescriptionsByValue[@(self.firstAttribute)]];
     }
 
-    [description appendFormat:@" %@", [self.class.layoutRelationDescriptionsByValue objectForKey:@(self.relation)]];
+    [description appendFormat:@" %@", self.class.layoutRelationDescriptionsByValue[@(self.relation)]];
 
     if (self.secondItem) {
         [description appendFormat:@" %@", [self.class descriptionForObject:self.secondItem]];
     }
     if (self.secondAttribute != NSLayoutAttributeNotAnAttribute) {
-        [description appendFormat:@".%@", [self.class.layoutAttributeDescriptionsByValue objectForKey:@(self.secondAttribute)]];
+        [description appendFormat:@".%@", self.class.layoutAttributeDescriptionsByValue[@(self.secondAttribute)]];
     }
     
     if (self.multiplier != 1) {
         [description appendFormat:@" * %g", self.multiplier];
     }
     
-    if (self.constant) {
-        if (self.secondAttribute == NSLayoutAttributeNotAnAttribute) {
-            [description appendFormat:@" %g", self.constant];
-        } else {
+    if (self.secondAttribute == NSLayoutAttributeNotAnAttribute) {
+        [description appendFormat:@" %g", self.constant];
+    } else {
+        if (self.constant) {
             [description appendFormat:@" %@ %g", (self.constant < 0 ? @"-" : @"+"), ABS(self.constant)];
         }
     }
 
     if (self.priority != MASLayoutPriorityRequired) {
-        [description appendFormat:@" ^%@", [self.class.layoutPriorityDescriptionsByValue objectForKey:@(self.priority)] ?: [NSNumber numberWithDouble:self.priority]];
+        [description appendFormat:@" ^%@", self.class.layoutPriorityDescriptionsByValue[@(self.priority)] ?: [NSNumber numberWithDouble:self.priority]];
     }
 
     [description appendString:@">"];

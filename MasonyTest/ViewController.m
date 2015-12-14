@@ -11,6 +11,7 @@
 #import "EdgeViewController.h"
 #import "EqualSpacingViewController.h"
 #import "ScrollViewController.h"
+#import "IntrinsicViewController.h"
 
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (strong, nonatomic) UITableView *tableView;
@@ -79,6 +80,11 @@
             [self.navigationController pushViewController:sc animated:YES];
         }
             break;
+            case 4:
+        {
+            IntrinsicViewController *ic = [[IntrinsicViewController alloc] init];
+            [self.navigationController pushViewController:ic animated:YES];
+        }
             
         default:
             break;
@@ -92,7 +98,7 @@
     if (!_titles) {
         
         _titles = [NSArray array];
-        _titles = @[@"居中显示",@"子视图含边距",@"视图等距离摆放",@"计算ScrollView的contentsize"];
+        _titles = @[@"居中显示",@"子视图含边距",@"视图等距离摆放",@"计算ScrollView的contentsize",@"左右视图固定,中间视图拉伸"];
     }
     return _titles;
 }

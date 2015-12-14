@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701E08281C1EA49B00807FD7 /* IntrinsicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 701E08271C1EA49B00807FD7 /* IntrinsicViewController.m */; };
 		7021BB851B25E28600DA2B89 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7021BB841B25E28600DA2B89 /* ScrollViewController.m */; };
 		702FECE61B2597E5003056E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 702FECE51B2597E5003056E4 /* main.m */; };
 		702FECE91B2597E5003056E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 702FECE81B2597E5003056E4 /* AppDelegate.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		701E08261C1EA49B00807FD7 /* IntrinsicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntrinsicViewController.h; sourceTree = "<group>"; };
+		701E08271C1EA49B00807FD7 /* IntrinsicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntrinsicViewController.m; sourceTree = "<group>"; };
 		7021BB831B25E28600DA2B89 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
 		7021BB841B25E28600DA2B89 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
 		702FECE01B2597E5003056E4 /* MasonyTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasonyTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +145,8 @@
 				702FED361B25AA45003056E4 /* EqualSpacingViewController.m */,
 				7021BB831B25E28600DA2B89 /* ScrollViewController.h */,
 				7021BB841B25E28600DA2B89 /* ScrollViewController.m */,
+				701E08261C1EA49B00807FD7 /* IntrinsicViewController.h */,
+				701E08271C1EA49B00807FD7 /* IntrinsicViewController.m */,
 				702FECED1B2597E5003056E4 /* Main.storyboard */,
 				702FECF01B2597E5003056E4 /* Images.xcassets */,
 				702FECF21B2597E5003056E4 /* LaunchScreen.xib */,
@@ -324,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701E08281C1EA49B00807FD7 /* IntrinsicViewController.m in Sources */,
 				702FED291B259841003056E4 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				702FED271B259841003056E4 /* MASViewConstraint.m in Sources */,
 				702FED221B259841003056E4 /* MASCompositeConstraint.m in Sources */,
